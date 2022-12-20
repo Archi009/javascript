@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>random.html</title>
+</head>
+
+<body>
+  <img src="/3일차/" alt="골댕" id="img" width="300">
+  <script>
+    let imgArr = new Array();
+    imgArr.push("/3일차/img/말티.jpg");
+    imgArr.push("/3일차/img/시츄.jpg");
+    imgArr.push("/3일차/img/요크.jpg");
+    imgArr.push("/3일차/img/포메.jpg");
+    imgArr.push("/3일차/img/푸들.jpg"); 
+    imgArr.push("/3일차/img/미니.jpg"); 
+    imgArr.push("/3일차/img/폭스.jpg"); 
+    // imgArr.push("img/래비.jpg"); 
+    // imgArr.push("img/멍.jpg"); 
+    // imgArr.push("img/쉬즈.jpg"); 
+    //베열의 크기만큼 0~lingth
+    
+    // function changeImg(){
+    // let num = Math.floor(Math.random()*imgArr.length) 
+    // img.src = imgArr[num];
+    
+    // };  //0~1사이 임의의 수  -> 0~10 but 사실 0~0.9999999 까지 값이 므로 10을 곱하면 0~9.9999999 값이므로 +1을 해주어 10으로 만들어 준다. 
+    window.setInterval(() =>{   
+    img.src = imgArr[Math.floor(Math.random()*imgArr.length)];}, 2000)
+    console.log(num);
+  </script>
+</body>
+
+</html>

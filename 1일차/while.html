@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>while</title>
+</head>
+
+<body>
+  <script>
+    let arr = [2, 5, 10, 20, 4]
+    // //
+    // for(let i=0; i<arr.length;i++){
+    //   console.log(arr[i])
+    // }
+    // let i = 0
+    // while (i<arr.length) { 
+    //   console.log(arr[i])
+    //   i++;
+    // } 
+
+    /////////////////////////////////////////////////////////
+
+    // 
+    let = lotto = []
+    for (let i = 0; i < 6; i++) {
+      let num = Math.round(Math.random() * 45) + 1
+      if (lotto.indexOf(num) == -1) {
+        lotto.push(num)
+      } else {
+        i--;
+      }
+    }
+    console.log(lotto)
+    //위 아래 모두 같으 결과 값을 가진다
+
+
+    // let i = 0;
+    // lotto = [];
+    // while (i < 6) {
+    //   let num = Math.round(Math.random() * 45) + 1
+    //   if (lotto.indexOf(num) == -1) {
+    //     lotto.push(num);
+    //     i++
+    //   }
+    // }
+    let i = 0;
+    lotto = [];
+    do  {
+      let num = Math.round(Math.random() * 45) + 1
+      if (lotto.indexOf(num) == -1) {
+        lotto.push(num);
+        i++
+      }
+    }while(i < 6)
+
+    
+    console.log(lotto)//if5.html과 비교해보자 i값의 활용과 의미 indexOf를 이용해서 만드는 확인 작없의 주체와 비교값을 정하는 문법을 확인해 봐야겠다
+  </script>
+</body>
+
+</html>
