@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>random.html</title>
+</head>
+
+<body>
+  <img src="img/골댕.jpg" alt="골댕" id="img" width="300">
+  <script>
+    let imgArr = new Array();
+    imgArr.push("img/말티.jpg");
+    imgArr.push("img/시츄.jpg");
+    imgArr.push("img/요크.jpg");
+    imgArr.push("img/포메.jpg");
+    imgArr.push("img/푸들.jpg"); 
+    imgArr.push("img/미니.jpg"); 
+    imgArr.push("img/폭스.jpg"); 
+    // imgArr.push("img/래비.jpg"); 
+    // imgArr.push("img/멍.jpg"); 
+    // imgArr.push("img/쉬즈.jpg"); 
+    //베열의 크기만큼 0~lingth
+    let num = Math.floor(Math.random()*imgArr.length) ;  //0~1사이 임의의 수  -> 0~10 but 사실 0~0.9999999 까지 값이 므로 10을 곱하면 0~9.9999999 값이므로 +1을 해주어 10으로 만들어 준다. 
+    console.log(num);
+    img.src = imgArr[num];
+  </script>
+</body>
+
+</html>

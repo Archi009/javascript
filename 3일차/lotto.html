@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lotto.hmtl</title>
+</head>
+<body>
+ <!-- 로또 번호 생셩기 
+번호 6개 생성해서 배열에 저장 1~45 -->
+  <script>
+    let arr = new Array();
+    // debugger
+    for(let i = 0; i < 6 ; i++){
+      //1~45사이의 난수 생성
+      let num = Math.floor(Math.random()*45)+1;
+      //난수를 배열에 추가
+      arr.push(num);
+    }
+    console.log(arr.sort((a, b)=>(a-b)).toString())
+  </script>
+</body>
+</html>

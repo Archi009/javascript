@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>알람</title>
+</head>
+
+<body>
+  <!-- 0<=H<=23, 0<=M<=59 -->
+  <script>
+    debugger
+    let num = prompt().split(" ")
+    let hour = Number.parseInt(num[0])
+    let min = Number.parseInt(num[1])
+
+    if (min > 45) {
+      min -= 45;
+    }
+    else if (min < 45) {
+      min += 15;
+      hour--;
+      if (hour == -1) { //왜 0보다 작다는 인식이 안되나?
+        hour = 23;
+      }
+    }
+    console.log(hour + '' + min)
+  </script>
+</body>
+
+</html>

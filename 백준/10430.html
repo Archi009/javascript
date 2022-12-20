@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나머지연산</title>
+</head>
+<body>
+ 
+  /*나머지연산*/
+  
+ <script> 
+  let num = prompt().split(" ") //문자열을
+  let A = parseInt(num[0]);
+  let B = parseInt(num[1]);
+  let C = parseInt(num[2]);
+  // (A+B)%C == ((A%C) + (B%C))%C
+  // (A*B)%C == ((A%C)*(B%C))%C
+  
+  console.log((A+B)%C );
+  console.log(((A%C) + (B%C))%C);
+  console.log((A*B)%C);
+  console.log(((A%C)*(B%C))%C);
+</script>
+</body>
+</html>

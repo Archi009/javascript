@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>popup.html</title>
+</head>
+<body>
+  <input type="text" id="txt">
+  <button id="btnSelect">선택</button>
+  <button id="btnClose">닫기</button>
+  <button id="btnPage">부모창의 페이지로 이동
+  </button>
+</body>
+<script>
+  btnSelect.onclick = function(){
+    //텍스트 필드의 입력값을 부모창의 div#x에 출력
+    opener.document.querySelector("#x").innerText = txt.value//부모창에 영향을 미치려면 opner
+  }
+  
+  btnClose.onclick = function(){
+    //팝업창 닫기
+    window.close() //자기자신에게 영향을 끼치려면 window 혹은 self
+  }
+  
+  btnPage.onclick = function(){
+      location.assign(txt.value)
+  }
+</script>
+</html>

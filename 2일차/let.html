@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>let</title>
+</head>
+<body>
+  <script>
+    /*
+    let : 블록 변수 : {}의미
+          중복선언 불가
+    
+    var : 중복 선언 가능 
+            
+       전역변수 - 함수 밖에 선언. 모든 함수에서 사용가능
+       지역변수 - 함수 안에 선언. 해당 함수만 사용가능    
+    
+    */
+    let sum = 0; // 요소 밖에 선언된 변수, 전역 변수 script변수
+    addNumber()
+    addNumber()
+    subNumber()
+    
+    alert(sum)
+
+    function addNumber(num1){
+      let sum = 0; // 지역변수 함수 내에서 sum을 지정해 준다 따라서 이 sum은 함수 내에서만 적용된다, local변수
+      for(let i=0; i<1; i++){ //i는 block변수, local 안에 만들어진.
+      sum += 10;
+    }
+    console.log(i)//마찬가지로 i또한 함수 내에서 정의된 변수이기에 함수 밖에서 불러내면 없는 값으로 출력된다.(함수밖에선 정의 되지 않았다)
+    }
+    function subNumber(num1){
+      sum -= 10;
+    }
+
+    // function addNumber(num1){
+    //   let sum = 0;
+    // }
+  
+  
+    // function subNumber(num1){
+    //   let sum = 0;
+    // }
+  </script>
+  
+</body>
+</html>

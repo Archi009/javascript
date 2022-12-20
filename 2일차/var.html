@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>var</title>
+</head>
+
+<body>
+  <script> //let과 var의 차이는 let은 글로벌, 로컬, 블록 각각에서 정의 내려지면 각각에서의 공간에서만 접근가능하고 var는 글로벌에선 글로벌로 로컬에서는 로컬로 블록에서는 로컬까지 접근 가능하다
+    var asum = 0;
+    let cnt = 0;
+    addNumber()
+    alert(asum)
+
+
+    function addNumber() {
+      var asum = 0;
+      for (var i = 0; i < 1; i++) { //만약 var를 지우면 i 를 전역 변수로 인식하여 function밖에서도 인식된다.
+        asum += 10
+      }
+      console.log(i)
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>figure</title>
+</head>
+<body>
+  <script>
+    /* 피겨 점수 계산 
+    최대값, 최소값, 합계, 평균*/
+
+
+    /*  
+    매개변수 : 배열 (점수)
+    리턴 : 숫자 (합계)
+    */
+    function total(score){ 
+      let s = 0;
+      for(let i=0 ; i < score.length; i++ ){ //i <= score.length 같이 =를 붙이면 안되는 이유는 무엇인가 hint 0
+         s += score[i]; 
+      }
+      return s;
+    }
+
+     function max (score){
+      //최대값 변수 선언 
+      //점수 배열 수 만큼 반복
+      //최대값이랑 배열 요소 값을 비교해서 요소 값이 크면 최대값 변수에 저장
+      //최대값 리턴
+      let m = score[0];
+       for(let i = 1; i < score.length; i++){
+        if (m < score[i]){
+          m = score[i];
+        }
+       
+      }
+      return m;
+     } 
+     function min (score){
+      
+      let m = score[0];
+       for(let i = 1; i < score.length; i++){
+        if (m > score[i]){
+          m = score[i];
+        }
+       
+      }
+      return m;
+     } 
+     
+     let tes_score = [3, 4, 1, 5];
+     let tes_total = total(tes_score);
+     let tes_max = max(tes_score);
+     let tes_min = min(tes_score);
+     let tes_avg = (total(tes_score) + max(tes_score) + min(tes_score)) / tes_score.length - 2;
+     
+     console.log('총점:', tes_total);
+     console.log('최고점수:', tes_max);
+     console.log('최저점수:',tes_min);
+     console.log('평균:',tes_avg);
+
+     //예술점수
+     let pcs_score = [2, 3, 3, 4]
+     let pcs_total = total(pcs_score);
+     let pcs_max = max(pcs_score);
+     let pcs_min = min(pcs_score);
+     let pcs_avg = (total(pcs_score) + max(pcs_score) + min(pcs_score)) / pcs_score.length - 2;
+
+     console.log('총점:', pcs_total);
+     console.log('최고점수:', pcs_max);
+     console.log('최저점수:',pcs_min);
+     console.log('평균:',pcs_avg);
+     </script>
+    
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>window.html</title>
+</head>
+
+<body>
+  <div>
+    <!-- top <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>end -->
+    <button id="btnOpen">새창열기</button>
+    <button id="btnClose">창닫기</button>
+    <button id="btnMove">이동</button>
+    <button id="btnRef">참조</button>
+    <button id="btnGeolocation">현위치</button>
+    <button id="btnlink">페이지 이동</button>
+    
+  </div>
+  <div id="x">
+
+  </div>
+  <script>
+    let popup;
+    btnlink.onclick = function(){
+      location.assign('location.html')
+    }
+
+    btnGeolocation.onclick = getLocation;
+
+    // btnOpen.onclick = function () {
+    //   popup = window.open('random.html', 'random', 'width=300, height=300, left=750, top=250')
+    //   if (popup == null) {
+    //     alert('팝업 차단 해제')
+    //   }
+    // }
+    btnOpen.onclick = function () {
+      let width = 400;
+      let height = 200;
+      let left = (screen.availWidth-width)/2; //정가운데
+      let top = (screen.availHeight-height)/2
+      popup = window.open('popup.html', 'random', `width= ${width}, height=  ${height}, left=${left} , top= ${top}` )
+      if (popup == null) {
+        alert('팝업 차단 해제')
+      }
+    }
+
+    btnClose.onclick = function () {
+      popup.close();
+    }
+    btnMove.onclick = function () {
+      popup.moveBy(100, 0);
+    }
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+    } //w3에서 복사해옴
+
+    // btnOpen.click();
+    /*  console.log(window.innerWidth, window.innerWidth)
+     console.log(window.screenX, window.screenY)
+     console.log(window.outerWidth, window.outerWidth)
+     console.log(window.scrollX, window.scrollY) */
+    console.log(navigator.userAgent)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  /*
+  var : 함수범위
+  let : 중복 선언 X 권장
+        블록 범위
+  */
+//let
+//  //올해가 윤년?
+//  let result = 2022 % 4;
+//  //요일
+//  let result = 15 % 7 let은 중복 선언을 하면 오류가 뜬다.
+ 
+//var
+//올해가 윤년?
+//  var result = 2022 % 4;
+//  //요일
+//  var result = 15 % 7 // var중복 선언이 가능하다.
+
+  //올해가 윤년?
+ let result = 2022 % 4;
+ //요일
+ let week = 15 % 7 //let은 중복 선언을 하면 오류가 뜬다.
+ let weekName = ['월','화','수','목','금','토','일']
+ console.log(weekName[week])
+  
+//해당월의 마지막 날이 몇일인지?
+let month = [31,28,31,30,31,30,31,31,30,31,30,31]
+//월 입력 (1~12)
+let monthLastDay = prompt("월을 입력하세요")
+//마지막 출력
+console.log(monthLastDay,'월은 ',month[monthLastDay-1],'일입니다')
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>요일</title>
+</head>
+
+<body>
+  <script>
+    debugger
+  
+    let num = prompt().split(" ")
+    let month = Number.parseInt(num[0])
+    let day = Number.parseInt(num[1])
+    let cday = 0;
+
+    let count = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    let date = ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat']
+    
+    for(let i = 0; i < month - 1 ; i ++ ){
+      cday += parseInt(count[i]);
+    }
+    let A = (cday + day) % 7;
+    
+    console.log(date[A - 1])
+    
+   
+    
+    
+  
+
+  </script>
+
+</body>
+
+</html>
