@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>append</append>
+  </title>
+  <style>
+    div {
+      margin: 5px;
+      padding: 10px;
+      border: 2px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="basket">바구니</div>
+
+  <div id="apple">사과</div>
+  <div id="banana">바나나</div>
+  <div id="kiwi">키위</div>
+  <script>
+
+    apple.onclick = function () {
+      // apple.remove()
+
+       let div = document.createElement("div")
+      //  div.innerHTML="사과"
+       basket.append(div)
+       //div.setAttribute('class', 'fruit')
+        div.classList.add('fruit')      
+        //div.setAttribute('title', 'apple')
+        div.title = 'apple'
+        // div.setAttribute('id', 'apple')
+        div.id = 'apple'
+        // let span = document.createElement("span")
+        // span.innerText="사과"
+        // div.append(span)
+        div.innerHTML="<span>사과</span>"
+        div.onclick = function(){
+          this.remove()
+        }
+      // basket.append(event.target)
+    }
+  </script>
+</body>
+
+</html>

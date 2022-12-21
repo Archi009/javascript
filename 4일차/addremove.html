@@ -20,7 +20,7 @@
     btnadd.onclick = function () {
       result.innerHTML +=
         `<div class="temp">
-        <button class="btnAdd">+</button>
+        
         <input type="text" id="school"><input type="text" id="dt"><button class="btn">-</button>
         </div>`
       let div = document.createElement("div");
@@ -34,8 +34,9 @@
     btn.onclick = function () {
      let darr = document.getElementById("result").getElementsByClassName("temp")
      let dbtn = document.getElementById("result").getElementsByClassName("btn")
-    remove(div.darr[0])
-    }
+     for(let i=0;i<dbtn.lenght;i++){
+      this.remove()
+    }}
   </script>
 </body>
 
