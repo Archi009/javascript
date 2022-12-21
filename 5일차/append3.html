@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>append2</title>
+  <style>
+    div {
+      margin: 5px;
+      padding: 10px;
+      border: 2px solid red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="apple" class="el">사과</div>
+  <div id="banana" class="el">바나나</div>
+  <div id="kiwi" class="el">키위</div>
+
+  <div id="basket">바구니</div>
+  <div id="template" style="display : none">
+
+    <div class="fruit" title="사과"><span></span></div>
+
+  </div>
+  <script>
+    let i, el;
+    el = document.querySelectorAll(".el")
+    for (i = 0; i < el.length; i++) {
+
+      el[i].onclick = function () {
+        let content = event.target.innerText;
+
+        let div = ` <div class="fruit" title="${content}"><span>${content}</span></div>`
+        basket.innerHTML += div;
+        // basket.append(div)
+        
+      }
+      
+
+    }
+  </script>
+</body>
+
+</html>
