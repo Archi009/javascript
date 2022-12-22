@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON2 : JavaScript Object Natation.html</title>
+</head>
+
+<body>
+  <h3>JSON2 : JavaScript Object Natation</h3>
+  <script>
+    let data = { name: 'park', age: 20, hobby: ['독서', '영화'] }
+
+    console.log(data.hobby[0]) //{} -> .연산자 (Object 개념으로 내부 Object에서 .연산자로 여러가지 속성을 끌어다 사용하는게 코딩), [] -> [0] 
+
+    let datas =
+      [{ name: 'park', age: 20, hobby: ['독서', '영화'] },
+      { name: 'kim', age: 10, hobby: ['크로스핏', '유산소'] },
+      { name: 'i', age: 14, hobby: ['헬스', '공부'] },
+      { name: 'pt', age: 15, hobby: ['웨이크', '코딩'] }]
+    console.log(datas[1].name)
+
+    let info = {
+      result: true,
+      count: 4,
+      data: [{ name: 'park', age: 20, hobby: ['독서', '영화'] },
+      { name: 'kim', age: 10, hobby: ['크로스핏', '유산소'] }]
+    }
+    console.log(info.data[0].hobby[0])
+
+    let chartdata =([
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1],
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
+        ])
+        for (let i = 0; i < chartdata.length; i++){
+          let d = chartdata[i][1]
+          if(d!= 2){
+            console.log(d)
+            }
+          // console.log(chartdata[i][1])
+          
+        }
+  </script>
+</body>
+
+</html>

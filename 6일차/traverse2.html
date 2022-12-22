@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>traverse2</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td><button>조회</button></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>4</td>
+      <td><button>조회</button></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>6</td>
+      <td><button>조회</button></td>
+    </tr>
+  </table>
+  <script>
+    document.querySelector("table").addEventListener("click", function(ev){
+      let node = ev.target
+      if (node.nodeName == "BUTTON" ) {
+       console.log(node.closest("tr").children[0].innerText)//childNode는 텍스트 까지 출력하고 children 은 태그만 출력한다
+       console.log(node.closest("tr").children[1].innerText)
+      }
+      //parentNode 부모노드 
+      //previousElementSibling 바로 위 형제 태그만 찾음  previousSibling 태그랑 텍스트 둘 다 찾음
+      //closest("") 가장가까운 부모노드("") 을 찾는다
+    })
+  </script>
+</body>
+</html>

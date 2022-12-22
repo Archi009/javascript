@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>json.html</title>
+</head>
+<body>
+  <div id="result">
+
+  </div>
+  <script src="json.js"></script>
+  <script>
+    //title만 출력
+    let result = document.getElementById("result")
+    for(let i = 0; i < posts.length; i++){
+      
+      let newNode = `${posts[i].title}<br>`
+      result.innerHTML += newNode
+    }
+
+  </script>
+</body>
+</html>

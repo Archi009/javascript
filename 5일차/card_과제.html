@@ -1,63 +1,102 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-#container {
-  display : grid ;
-  grid-template-columns : repeat(auto-fit, 400px);
-  grid-gap: 200px
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    #template {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 400px);
+      grid-gap: 200px
+    }
 
-}
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 40%;
-}
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      width: 40%;
+    }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
 
-.container {
-  padding: 2px 16px;
-}
-</style>
+    .container {
+      padding: 2px 16px;
+    }
+  </style>
 </head>
+
 <body>
-<div id="container">
-<h2>Card</h2>
-<div class="card">
-  <img src="/3일차/img/멍.jpg" alt="Avatar" style="width:100%">
-  <div class="container">
-    <h4><b>John Doe</b></h4> 
-    <p>Architect & Engineer</p> 
+  <h2>Card</h2>
+  <div id="tamplate">
+
+    <div class="card">
+      <img src="/3일차/img/멍.jpg" alt="Avatar" style="width:100%">
+      <div class="container" style="display:none">
+        <h4><b>name</b></h4>
+        <p>email</p>
+        <p>company.name</p>
+      </div>
+
+    </div>
   </div>
-</div>
 
 
 
 
-<script>
-  let person = {name:"choi", age:"20"}
 
-  let persions = [
-    {name:"choi", skill:"architect & Engineer"},
-    {name:"i", skill:"artist"},
-    {name:"park", skill:"programer"}
-    ]
-  for(let i=0; i<persions.length;i++){
-    let result = document.getElementById('container')
-    let newNode = `<div class="card">
-  <img src="/3일차/img/멍.jpg" alt="Avatar" style="width:100%">
-  <div class="container">
-    <h4><b>${persions[i].name}</b></h4> 
-    <p>${persions[i].skill}</p> 
-  </div>
-</div> `
-    result.innerHTML += newNode
-  }
-  
-</script>
+  <script>
+    function a() {
+      let xhr = new XMLHttpRequest
+      xhr.onload = function () { callback(xhr) }
+      let url = 'https://jsonplaceholder.typicode.com/users'
+      xhr.open('get', url)
+      xhr.send()
+    }
+
+    function callback(xhr) {
+      let b = JSON.parse(xhr.response)
+      for (let i = 0; i < b.length; i++) {
+        let c = `<div class="card">
+                 <div class="container">
+                 <h4><b>${b[i].id}</b></h4> 
+                 <p>${b[i].email}</p>
+                 <p>${b[i].company.name}.name</p>
+                 </div> 
+                 </div>`
+        tamplate.innerHTML += c
+
+      }
+
+
+    }
+
+    a()
+
+
+
+  // let person = {name:"choi", age:"20"}
+
+  // let persions = [
+  //   {name:"choi", skill:"architect & Engineer"},
+  //   {name:"i", skill:"artist"},
+  //   {name:"park", skill:"programer"}
+  //   ]
+  // for(let i=0; i<persions.length;i++){
+//     let result = document.getElementById('container')
+//     let newNode = `<div class="card">
+//   <img src="/3일차/img/멍.jpg" alt="Avatar" style="width:100%">
+//   <div class="container">
+//     <h4><b>${persions[i].name}</b></h4> 
+//     <p>${persions[i].skill}</p> 
+//   </div>
+// </div> `
+//     result.innerHTML += newNode
+
+  // let newNode =
+  // }
+
+  </script>
 </body>
-</html> 
+
+</html>
