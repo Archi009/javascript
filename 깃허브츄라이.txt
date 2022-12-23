@@ -1,0 +1,9 @@
+git 설치 
+git config --global user.name "Seonguk. Lim
+git config --global user.email dnrdl6817@gmail.com
+
+f1 - > git clone 
+
+https://github.com/Archi009/javascript.git (깃허브 자바폴더의 주소를 복사 해온다 
+
+> 내려받을 폴더 선택 후 내려받기
