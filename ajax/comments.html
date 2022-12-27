@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>comments.html</title>
+  </head>
+  <body>
+    <h3>comments관리</h3>
+    <div id="commentsList"></div>
+    <form>
+      <input id="id" placeholder="id" />
+      <input id="body" placeholder="body" />
+      <button id="btnAdd" type="button">포스트등록</button>
+      <button id="btndel" type="button">포스트삭제</button>
+    </form>
+    <script>
+      selectComments();
+
+      btnAdd.addEventListener("click", addComments);
+      commentsList.addEventListener("click", delComments);
+
+      //조회
+
+      function selectComments() {
+        let url = "http://localhost:3000/comments";
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+          console.log("불러내기");
+          const comments = JSON.parse(xhr.responseText);
+          commentsList.innerHTML = "";
+          for (let i = 0; i < comments.length; i++) {
+            commentsList.innerHTML += `<div>${comments[i].id}${comments[i].body}</div>
+            <button data-id="${comments[i].id}">삭제</button>`;
+          }
+        };
+        xhr.open("get", url);
+        xhr.send();
+        console.log("요청시작");
+      }
+
+      //추가
+
+      function addComments() {
+        let url = "http://localhost:3000/comments";
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+          selectComments();
+        };
+
+        xhr.open("post", url);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        let data = { id: id.value, body: body.value };
+        xhr.send(JSON.stringify(data));
+        id.value = "";
+        body.value = "";
+      }
+
+      //삭제
+
+      function delComments(ev) {
+        let del = ev.target.getAttribute("data-id");
+        let url = "http://localhost:3000/comments/" + del;
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+          selectComments();
+        };
+        xhr.open("delete", url);
+
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>

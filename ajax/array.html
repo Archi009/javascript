@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array.html</title>
+  </head>
+  <body>
+    <script>
+      //얕은 복사, 깊은 복사
+      let arr1 = ["사과", "바나나", { id: 1, name: "park" }];
+      // let arr2 = arr1; //얕은 복사 참조(ref)값이 같기 때문에 아래 arr2를 포도로 만들고 arr1의0번째 값을 출력하면 변경돼있다
+      //let arr2 = [...arr1]; //...spread {기본타입 깊은 복사 객체 타입 얕은 복사} arr1안의 값을 풀어 내서 arr2로 정의 하고 값을 바꾸는 것이기 때문에 참조 값이 달라진다 (slice,from 또한 마찬가지) but 객체 형태를 복사 할땐 얕은 복사
+      let arr2 = JSON.parse(JSON.stringify(arr1)); //깊은 복사
+      arr2[0] = "포도";
+
+      arr2[2].name = "choi";
+      console.table(arr1);
+      console.table(arr2);
+
+      //length 이용해서 값을 지워보겠다
+      arr2.length = 0; //삭제
+      console.table("arr2", arr2);
+    </script>
+  </body>
+</html>
