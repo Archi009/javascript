@@ -8,6 +8,7 @@
   </head>
   <body>
     <h3>comments관리</h3>
+    <button onclick="selectComments()">comments조회</button>
     <div id="commentsList"></div>
     <form>
       <input id="id" placeholder="id" />
@@ -26,8 +27,8 @@
       function selectComments() {
         let url = "http://localhost:3000/comments";
         fetch(url)
-          .then((res) => res.json)
-          .then((res) => {
+          .then((res) => res.json())
+          .then((comments) => {
             commentsList.innerHTML = "";
             for (let i = 0; i < comments.length; i++) {
               commentsList.innerHTML += `<div>${comments[i].id}${comments[i].body}</div>
@@ -37,16 +38,17 @@
       }
 
       //추가
-      xhr.setRequestHeader("Content-Type", "application/json");
 
       function addComments() {
         let url = "http://localhost:3000/comments";
         let data = { id: id.value, body: body.value };
         fetch(url, {
-          method: "post",
+          method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
-        });
+        })
+          .then((res) => res.json())
+          .then((res) => selectComments());
         id.value = "";
         body.value = "";
       }
@@ -56,13 +58,7 @@
       function delComments(ev) {
         let del = ev.target.getAttribute("data-id");
         let url = "http://localhost:3000/comments/" + del;
-        let xhr = new XMLHttpRequest();
-        xhr.onload = function () {
-          selectComments();
-        };
-        xhr.open("delete", url);
-
-        xhr.send();
+        fetch(url, { method: "DELETE" }).then((res) => selectComments());
       }
     </script>
   </body>

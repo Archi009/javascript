@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>regularExpression</title>
+  </head>
+  <body>
+    <input type="text" id="txt" />
+    <button type="button" id="btn">검사</button>
+    <script>
+      btn.addEventListener("click", function () {
+        //패턴 : 정규식 리터럴(상수)
+        // \\=정규식 리터럴 {}오브젝트 []배열
+        // let regexp = /^world$/; //시작에 w 끝에 d 로 하는 단어 world가 있는가?
+        // let regexp = /^[a-z]{3}$/; //a-z까지 소문자 중 3글자로 돼있는가
+        // let regexp = /^\d{3}$/; //숫자 3개로 돼있는가
+        let regexp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        const re = regexp.test(txt.value); //exec함수는 테스트 값의 위치까지 가르쳐 주지만 test함수는 true false 만 가르쳐 준다
+        console.log(re);
+      });
+    </script>
+  </body>
+</html>
